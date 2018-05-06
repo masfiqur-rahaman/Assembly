@@ -1,4 +1,4 @@
-;INPUT: A NUMBER N
+                        ;INPUT: A NUMBER N
 ; OUTUT: PRINT N-1 TO 1
 
 .MODEL SMALL
