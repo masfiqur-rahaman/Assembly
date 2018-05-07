@@ -1,13 +1,20 @@
+.MODEL SMALL
+.STACK 100H
+.DATA 
 
-; You may customize this and other start-up templates; 
-; The location of this template is c:\emu8086\inc\0_com_template.txt
+ARRAY DW 10,20,30
 
-org 100h
+.CODE
 
-; add your code here
-
-ret
-
-
-
-
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS,AX
+    
+    MOV AX,5
+    LEA SI,ARRAY
+    XCHG AX,[SI]
+    
+    MOV AH,4CH
+    INT 21H
+    MAIN ENDP
+END MAIN
