@@ -71,8 +71,13 @@ MAIN PROC
     
    
     ;PRINT OUTPUT
+    MOV AH,2
+    MOV DL,0DH
+    INT 21H
+    MOV DL,0AH
+    INT 21H
     MOV AH,9
-    LEA DX,MSG1
+    LEA DX,MSG2
     INT 21H
     CALL PRINT 
      
@@ -121,11 +126,11 @@ MAIN ENDP
      MOV AH,2
      @PRINT_LOOP:
      POP DX
-     OR DL,30H
-     INT 21H 
-     mov DL, 20H
+     OR DL,30H    
      INT 21H
      LOOP @PRINT_LOOP
+      
+     3 5 1 6 -10 
      JMP WHILE2
      EXIT:
      POP DX
