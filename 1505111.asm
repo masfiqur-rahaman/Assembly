@@ -130,7 +130,8 @@ MAIN ENDP
      INT 21H
      LOOP @PRINT_LOOP
       
-     3 5 1 6 -10 
+     MOV DL, 20H
+     INT 21H 
      JMP WHILE2
      EXIT:
      POP DX
